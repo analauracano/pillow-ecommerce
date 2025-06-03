@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Hora do Sono</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="logo">A Hora do Sono</h1>
+      <h2 class="subtitle">O Melhor Travesseiro Ortopédico do Mundo</h2>
+      <p class="tagline">Durma Melhor. Viva Melhor.</p>
+      <a href="#products" class="cta-button">Quero dormir bem todas as noites</a>
+    </div>
+  </section>
+
+  <!-- Por que escolher? -->
+  <section class="section why-choose" id="why-choose">
+    <h2 class="section-title">Por que escolher?</h2>
+    <div id="features-container" class="features-grid"></div>
+  </section>
+
+  <!-- Benefícios -->
+  <section class="benefits section">
+    <h2 class="section-title">Benefícios</h2>
+    <div class="benefits-list">
+      <div class="benefit-item"><span class="benefit-icon">✨</span><span>Alívio imediato de dores no pescoço e coluna</span></div>
+      <div class="benefit-item"><span class="benefit-icon">😴</span><span>Sono mais profundo e reparador</span></div>
+      <div class="benefit-item"><span class="benefit-icon">🏥</span><span>Recomendado por ortopedistas</span></div>
+      <div class="benefit-item"><span class="benefit-icon">💤</span><span>Reduz roncos e melhora a respiração</span></div>
+      <div class="benefit-item"><span class="benefit-icon">🌙</span><span>Mantém temperatura ideal durante a noite</span></div>
+      <div class="benefit-item"><span class="benefit-icon">💪</span><span>Durabilidade superior - não deforma</span></div>
+    </div>
+  </section>
+
+  <!-- Pessoas Reais, Resultados Reais -->
+  <section class="section" id="real-people-results">
+    <h2 class="section-title">Pessoas Reais, Resultados Reais</h2>
+    <div id="testimonials-container" class="testimonials-grid"></div>
+  </section>
+
+  <!-- Escolha a melhor opção pra você -->
+  <section class="section" id="choose-best-option">
+    <h2 class="section-title">Escolha a melhor opção pra você</h2>
+    <div id="products-container" class="products-grid"></div>
+  </section>
+
+  <!-- Admin Panel -->
+  <div class="admin-panel">
+    <button id="adminToggleBtn" class="admin-toggle">Admin Login</button>
+  </div>
+
+  <div id="adminModal" class="admin-modal">
+    <div class="admin-content">
+      <span id="closeAdminBtn" class="close-admin">&times;</span>
+
+      <!-- Login -->
+      <div id="loginSection">
+        <h3>Login Admin</h3>
+        <div class="form-group">
+          <label for="adminEmail">Email:</label>
+          <input type="email" id="adminEmail" placeholder="email@exemplo.com" />
+        </div>
+        <div class="form-group">
+          <label for="adminPassword">Senha:</label>
+          <input type="password" id="adminPassword" placeholder="Sua senha" />
+        </div>
+        <button id="loginBtn" class="btn">Entrar</button>
+        <p id="loginError" style="color:red; display:none;">Email ou senha incorretos</p>
+      </div>
+
+      <!-- Admin Editor -->
+      <div id="adminEditor" style="display:none;">
+        <h3>Editar Conteúdo</h3>
+
+        <!-- Depoimentos -->
+        <div class="admin-section">
+          <h4>Depoimentos (Pessoas Reais, Resultados Reais)</h4>
+          <div id="adminTestimonials"></div>
+          <button id="addTestimonialBtn" class="btn">Adicionar Depoimento</button>
+        </div>
+
+        <!-- Produtos -->
+        <div class="admin-section">
+          <h4>Produtos (Escolha a melhor opção pra você)</h4>
+          <form id="product-form" class="form-group">
+            <input type="text" id="nome" placeholder="Nome do produto" required />
+            <input type="number" id="preco" placeholder="Preço" required />
+            <input type="text" id="imagem" placeholder="URL da imagem ou ícone" required />
+            <button type="submit" class="btn">Salvar Produto</button>
+          </form>
+
+          <button id="addProductBtn" class="btn">Adicionar Produto</button>
+          <div id="adminProducts"></div>
+        </div>
+
+        <!-- Por que escolher -->
+        <div class="admin-section">
+          <h4>Por que escolher?</h4>
+          <div id="adminFeatures"></div>
+          <button id="addFeatureBtn" class="btn">Adicionar Feature</button>
+        </div>
+
+        <button id="logoutBtn" class="btn btn-danger">Sair</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase + Admin Script -->
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
